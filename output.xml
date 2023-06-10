@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.2 on win32)" generated="20230610 19:11:07.900" rpa="false" schemaversion="3">
+<suite id="s1" name="TC2" source="D:\robotframework-api\TestCases\TC2.robot">
+<test id="s1-t1" name="Login With Admin" line="2">
+<kw name="Given I am on the login page">
+<kw name="Log To Console" library="BuiltIn">
+<arg>I am on the login page</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.942" endtime="20230610 19:11:07.943"/>
+</kw>
+<status status="PASS" starttime="20230610 19:11:07.941" endtime="20230610 19:11:07.943"/>
+</kw>
+<kw name="When I login with username &quot;admin&quot; and password &quot;admin&quot;" sourcename="I login with username &quot;${username}&quot; and password &quot;${password}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>I login with username "${username}" and password "${password}"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.945" endtime="20230610 19:11:07.947"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${username}&quot; == &quot;admin&quot; and &quot;${password}&quot; == &quot;admin&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.947" endtime="20230610 19:11:07.948"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${login_status}</arg>
+<arg>True</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230610 19:11:07.950" level="INFO">${login_status} = True</msg>
+<status status="PASS" starttime="20230610 19:11:07.948" endtime="20230610 19:11:07.950"/>
+</kw>
+<status status="PASS" starttime="20230610 19:11:07.947" endtime="20230610 19:11:07.950"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login failed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230610 19:11:07.951" endtime="20230610 19:11:07.951"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${login_status}</arg>
+<arg>False</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20230610 19:11:07.951" endtime="20230610 19:11:07.951"/>
+</kw>
+<status status="NOT RUN" starttime="20230610 19:11:07.950" endtime="20230610 19:11:07.952"/>
+</branch>
+<status status="PASS" starttime="20230610 19:11:07.947" endtime="20230610 19:11:07.952"/>
+</if>
+<status status="PASS" starttime="20230610 19:11:07.944" endtime="20230610 19:11:07.952"/>
+</kw>
+<kw name="Then I should see the welcome page">
+<kw name="Log To Console" library="BuiltIn">
+<arg>I should see the welcome page</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.954" endtime="20230610 19:11:07.954"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${login_status}&quot; == &quot;True&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Welcome page is displayed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.955" endtime="20230610 19:11:07.955"/>
+</kw>
+<status status="PASS" starttime="20230610 19:11:07.954" endtime="20230610 19:11:07.955"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Welcome page is not displayed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230610 19:11:07.955" endtime="20230610 19:11:07.956"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>Welcome page is not displayed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230610 19:11:07.956" endtime="20230610 19:11:07.956"/>
+</kw>
+<status status="NOT RUN" starttime="20230610 19:11:07.955" endtime="20230610 19:11:07.956"/>
+</branch>
+<status status="PASS" starttime="20230610 19:11:07.954" endtime="20230610 19:11:07.956"/>
+</if>
+<status status="PASS" starttime="20230610 19:11:07.953" endtime="20230610 19:11:07.956"/>
+</kw>
+<doc>This test case is to test login with BDD syntax</doc>
+<status status="PASS" starttime="20230610 19:11:07.940" endtime="20230610 19:11:07.957"/>
+</test>
+<test id="s1-t2" name="Login With Invalid User" line="8">
+<kw name="Given I am on the login page">
+<kw name="Log To Console" library="BuiltIn">
+<arg>I am on the login page</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.962" endtime="20230610 19:11:07.963"/>
+</kw>
+<status status="PASS" starttime="20230610 19:11:07.962" endtime="20230610 19:11:07.964"/>
+</kw>
+<kw name="When I login with username &quot;invalid&quot; and password &quot;invalid&quot;" sourcename="I login with username &quot;${username}&quot; and password &quot;${password}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>I login with username "${username}" and password "${password}"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.965" endtime="20230610 19:11:07.966"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${username}&quot; == &quot;admin&quot; and &quot;${password}&quot; == &quot;admin&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230610 19:11:07.966" endtime="20230610 19:11:07.967"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${login_status}</arg>
+<arg>True</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20230610 19:11:07.967" endtime="20230610 19:11:07.967"/>
+</kw>
+<status status="NOT RUN" starttime="20230610 19:11:07.966" endtime="20230610 19:11:07.967"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login failed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.968" endtime="20230610 19:11:07.968"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${login_status}</arg>
+<arg>False</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230610 19:11:07.970" level="INFO">${login_status} = False</msg>
+<status status="PASS" starttime="20230610 19:11:07.969" endtime="20230610 19:11:07.970"/>
+</kw>
+<status status="PASS" starttime="20230610 19:11:07.967" endtime="20230610 19:11:07.971"/>
+</branch>
+<status status="PASS" starttime="20230610 19:11:07.966" endtime="20230610 19:11:07.971"/>
+</if>
+<status status="PASS" starttime="20230610 19:11:07.964" endtime="20230610 19:11:07.971"/>
+</kw>
+<kw name="Then I should see the error message">
+<kw name="Log To Console" library="BuiltIn">
+<arg>I should see the error message</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.972" endtime="20230610 19:11:07.973"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${login_status}&quot; == &quot;False&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Error message is displayed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.975" endtime="20230610 19:11:07.978"/>
+</kw>
+<status status="PASS" starttime="20230610 19:11:07.974" endtime="20230610 19:11:07.978"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Error message is not displayed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230610 19:11:07.978" endtime="20230610 19:11:07.979"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>Error message is not displayed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230610 19:11:07.979" endtime="20230610 19:11:07.979"/>
+</kw>
+<status status="NOT RUN" starttime="20230610 19:11:07.978" endtime="20230610 19:11:07.979"/>
+</branch>
+<status status="PASS" starttime="20230610 19:11:07.973" endtime="20230610 19:11:07.979"/>
+</if>
+<status status="PASS" starttime="20230610 19:11:07.972" endtime="20230610 19:11:07.980"/>
+</kw>
+<kw name="And I should be able to login again">
+<kw name="Log To Console" library="BuiltIn">
+<arg>I should be able to login again</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.981" endtime="20230610 19:11:07.982"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>The Login page is displayed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230610 19:11:07.982" endtime="20230610 19:11:07.983"/>
+</kw>
+<status status="PASS" starttime="20230610 19:11:07.980" endtime="20230610 19:11:07.983"/>
+</kw>
+<doc>This test case is to test login with BDD syntax</doc>
+<status status="PASS" starttime="20230610 19:11:07.961" endtime="20230610 19:11:07.984"/>
+</test>
+<status status="PASS" starttime="20230610 19:11:07.905" endtime="20230610 19:11:07.987"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="TC2">TC2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
