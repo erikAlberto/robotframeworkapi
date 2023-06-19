@@ -1,197 +1,298 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.8.2 on win32)" generated="20230610 19:11:07.900" rpa="false" schemaversion="3">
-<suite id="s1" name="TC2" source="D:\robotframework-api\TestCases\TC2.robot">
-<test id="s1-t1" name="Login With Admin" line="2">
+<robot generator="Robot 6.0.2 (Python 3.8.2 on win32)" generated="20230618 21:04:21.281" rpa="false" schemaversion="3">
+<suite id="s1" name="TC1 GET Request &amp; TC2">
+<suite id="s1-s1" name="TC1 GET Request" source="D:\robotframework-api\TestCases\TC1_GET_Request.robot">
+<test id="s1-s1-t1" name="Quick Get Request Test" line="6">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>https://www.google.com</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230618 21:04:24.013" level="INFO">GET Request : url=https://www.google.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230618 21:04:24.014" level="INFO">GET Response : url=https://www.google.com/ 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 19 Jun 2023 01:03:44 GMT', 'Expires': '-1', 'Cache-Control': 'private, max-age=0', 'Content-Type': 'text/html; charset=ISO-8859-1', 'Content-Security-Policy-Report-Only': "object-src 'none';base-uri 'self';script-src 'nonce-21RG7Ca6DLBIB2elWmdNow' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp", 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Content-Encoding': 'gzip', 'Server': 'gws', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Set-Cookie': '1P_JAR=2023-06-19-01; expires=Wed, 19-Jul-2023 01:03:44 GMT; path=/; domain=.google.com; Secure, AEC=AUEFqZecKsMx_tAUZHpNyo5nZVAHn496L9w9NyUnwXbvsrn8D6ZT4_4h0g; expires=Sat, 16-Dec-2023 01:03:44 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=511=RFkUq3nXmfk0WvJj6YCEBz90D7kZIutM8HgaMLbSqb_5v9j0vPiYqp2mO6aQivAolWaiCCBLLZNF0kVvt_8wjid9Jj-9rDqT85c2ZAKYwjVDQJ-LehsaQInkmgEp1jwp0H8zgfbTHG7ypNZuiVPgIedAzHVVXQ9TVQ1aMbHI6wQ; expires=Tue, 19-Dec-2023 01:03:44 GMT; path=/; domain=.google.com; HttpOnly', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'Transfer-Encoding': 'chunked'} 
+ body=&lt;!doctype html&gt;&lt;html itemscope="" itemtype="http://schema.org/WebPage" lang="es-419"&gt;&lt;head&gt;&lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type"&gt;&lt;meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"&gt;&lt;title&gt;Google&lt;/title&gt;&lt;script nonce="21RG7Ca6DLBIB2elWmdNow"&gt;(function(){var _g={kEI:'cKmPZIaVJcG85OUPicGGgAg',kEXPI:'0,793344,566065,6058,207,4804,2316,383,246,5,1129120,1197726,668,380097,16114,19397,9287,22431,1361,12316,17583,4998,17075,38444,2872,2891,3926,214,7614,606,30668,30022,2614,3901,9590,230,20583,4,1528,2304,38933,3192,11445,2215,4437,9358,13201,6678,7596,1,11943,30211,2,39761,5679,1020,25048,6074,4568,6256,23421,1246,5841,14968,4332,7484,445,2,2,1,10956,15676,8155,7381,1479,14491,873,6577,1252,11804,7,1922,9779,42459,2007,18192,5796,3,14337,14,82,4140,10570,5496,8377,18960,3883,1520,1494,771,765,5630,480,9706,1804,10472,2884,450,6711,6577,2257,3746,10958,2365,662,1635,5798,2,2148,1760,2707,2571,8275,355,3083,1149,1428,6384,2831,1,1072,2884,2827,560,163,5,3073,1978,442,962,309,2041,372,1111,2,643,20,5202601,5565,1271,133,2,4,2,61,8798084,3311,141,795,19735,1,1,346,6044,552,57,17,1,1,1,10,1,2,3,3,7,3,11,3,2,20,5,3,22,5,5,1,4,28,23943674,578,2861448,1182080,16672,2894,6250,19846,30,13,6453,1585798,23577926,682,85,94,133,2049,4,554,255,270,22,871,507,795,2108,692,1280,1372,6,967,53,335,2034,13,1779,226,1093,19,110,160,81,482,699,502,566,2227,99,376,486,336,186,330,545,198,150,104,1062,788,326,1100,21,566,2093,10,143,282,8,86,266,327,87,166,91,403,137,241,23,39,803,458,88,356,92,164,336,36,428,125,148,365,734,123,1546,28,269,42,482,168,45,497,586,57,65,1437,180,619,295,484,633,693,1988,1525,456,750',kBL:'9mTW',kOPI:89978449};if (window.google &amp;&amp; window.google.stvsc){window.google.kEI = _g.kEI;}else {window.google = _g;}
+})();(function(){google.sn='webhp';google.kHL='es-419';})();(function(){
+var h=this||self;function l(){return void 0!==window.google&amp;&amp;void 0!==window.google.kOPI&amp;&amp;0!==window.google.kOPI?window.google.kOPI:null};var m,n=[];function p(a){for(var b;a&amp;&amp;(!a.getAttribute||!(b=a.getAttribute("eid")));)a=a.parentNode;return b||m}function q(a){for(var b=null;a&amp;&amp;(!a.getAttribute||!(b=a.getAttribute("leid")));)a=a.parentNode;return b}function r(a){/^http:/i.test(a)&amp;&amp;"https:"===window.location.protocol&amp;&amp;(google.ml&amp;&amp;google.ml(Error("a"),!1,{src:a,glmm:1}),a="");return a}
+function t(a,b,c,d,k){var e="";-1===b.search("&amp;ei=")&amp;&amp;(e="&amp;ei="+p(d),-1===b.search("&amp;lei=")&amp;&amp;(d=q(d))&amp;&amp;(e+="&amp;lei="+d));d="";var g=-1===b.search("&amp;cshid=")&amp;&amp;"slh"!==a,f=[];f.push(["zx",Date.now().toString()]);h._cshid&amp;&amp;g&amp;&amp;f.push(["cshid",h._cshid]);c=c();null!=c&amp;&amp;f.push(["opi",c.toString()]);for(c=0;c&lt;f.length;c++){if(0===c||0&lt;c)d+="&amp;";d+=f[c][0]+"="+f[c][1]}return"/"+(k||"gen_204")+"?atyp=i&amp;ct="+String(a)+"&amp;cad="+(b+e+d)};m=google.kEI;google.getEI=p;google.getLEI=q;google.ml=function(){return null};google.log=function(a,b,c,d,k,e){e=void 0===e?l:e;c||(c=t(a,b,e,d,k));if(c=r(c)){a=new Image;var g=n.length;n[g]=a;a.onerror=a.onload=a.onabort=function(){delete n[g]};a.src=c}};google.logUrl=function(a,b){b=void 0===b?l:b;return t("",a,b)};}).call(this);(function(){google.y={};google.sy=[];google.x=function(a,b){if(a)var c=a.id;else{do c=Math.random();while(google.y[c])}google.y[c]=[a,b];return!1};google.sx=function(a){google.sy.push(a)};google.lm=[];google.plm=function(a){google.lm.push.apply(google.lm,a)};google.lq=[];google.load=function(a,b,c){google.lq.push([[a],b,c])};google.loadAll=function(a,b){google.lq.push([a,b])};google.bx=!1;google.lx=function(){};}).call(this);google.f={};(function(){
+document.documentElement.addEventListener("submit",function(b){var a;if(a=b.target){var c=a.getAttribute("data-submitfalse");a="1"===c||"q"===c&amp;&amp;!a.elements.q.value?!0:!1}else a=!1;a&amp;&amp;(b.preventDefault(),b.stopPropagation())},!0);document.documentElement.addEventListener("click",function(b){var a;a:{for(a=b.target;a&amp;&amp;a!==document.documentElement;a=a.parentElement)if("A"===a.tagName){a="1"===a.getAttribute("data-nohref");break a}a=!1}a&amp;&amp;b.preventDefault()},!0);}).call(this);&lt;/script&gt;&lt;style&gt;#gbar,#guser{font-size:13px;padding-top:1px !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}
+&lt;/style&gt;&lt;style&gt;body,td,a,p,.h{font-family:arial,sans-serif}body{margin:0;overflow-y:scroll}#gog{padding:3px 8px 0}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}.h{color:#1967d2}em{font-weight:bold;font-style:normal}.lst{height:25px;width:496px}.gsfi,.lst{font:18px arial,sans-serif}.gsfs{font:17px arial,sans-serif}.ds{display:inline-box;display:inline-block;margin:3px 0 4px;margin-left:4px}input{font-family:inherit}body{background:#fff;color:#000}a{color:#681da8;text-decoration:none}a:hover,a:active{text-decoration:underline}.fl a{color:#1967d2}a:visited{color:#681da8}.sblc{padding-top:5px}.sblc a{display:block;margin:2px 0;margin-left:13px;font-size:11px}.lsbb{background:#f8f9fa;border:solid 1px;border-color:#dadce0 #70757a #70757a #dadce0;height:30px}.lsbb{display:block}#WqQANb a{display:inline-block;margin:0 12px}.lsb{background:url(/images/nav_logo229.png) 0 -261px repeat-x;color:#000;border:none;cursor:pointer;height:30px;margin:0;outline:0;font:15px arial,sans-serif;vertical-align:top}.lsb:active{background:#dadce0}.lst:focus{outline:none}&lt;/style&gt;&lt;script nonce="21RG7Ca6DLBIB2elWmdNow"&gt;(function(){window.google.erd={jsr:1,bv:1815,de:true};
+var h=this||self;var k,l=null!=(k=h.mei)?k:1,n,p=null!=(n=h.sdo)?n:!0,q=0,r,t=google.erd,v=t.jsr;google.ml=function(a,b,d,m,e){e=void 0===e?2:e;b&amp;&amp;(r=a&amp;&amp;a.message);if(google.dl)return google.dl(a,e,d),null;if(0&gt;v){window.console&amp;&amp;console.error(a,d);if(-2===v)throw a;b=!1}else b=!a||!a.message||"Error loading script"===a.message||q&gt;=l&amp;&amp;!m?!1:!0;if(!b)return null;q++;d=d||{};b=encodeURIComponent;var c="/gen_204?atyp=i&amp;ei="+b(google.kEI);google.kEXPI&amp;&amp;(c+="&amp;jexpid="+b(google.kEXPI));c+="&amp;srcpg="+b(google.sn)+"&amp;jsr="+b(t.jsr)+"&amp;bver="+b(t.bv);var f=a.lineNumber;void 0!==f&amp;&amp;(c+="&amp;line="+f);var g=
+a.fileName;g&amp;&amp;(0&lt;g.indexOf("-extension:/")&amp;&amp;(e=3),c+="&amp;script="+b(g),f&amp;&amp;g===window.location.href&amp;&amp;(f=document.documentElement.outerHTML.split("\n")[f],c+="&amp;cad="+b(f?f.substring(0,300):"No script found.")));c+="&amp;jsel="+e;for(var u in d)c+="&amp;",c+=b(u),c+="=",c+=b(d[u]);c=c+"&amp;emsg="+b(a.name+": "+a.message);c=c+"&amp;jsst="+b(a.stack||"N/A");12288&lt;=c.length&amp;&amp;(c=c.substr(0,12288));a=c;m||google.log(0,"",a);return a};window.onerror=function(a,b,d,m,e){r!==a&amp;&amp;(a=e instanceof Error?e:Error(a),void 0===d||"lineNumber"in a||(a.lineNumber=d),void 0===b||"fileName"in a||(a.fileName=b),google.ml(a,!1,void 0,!1,"SyntaxError"===a.name||"SyntaxError"===a.message.substring(0,11)||-1!==a.message.indexOf("Script error")?3:0));r=null;p&amp;&amp;q&gt;=l&amp;&amp;(window.onerror=null)};})();&lt;/script&gt;&lt;/head&gt;&lt;body bgcolor="#fff"&gt;&lt;script nonce="21RG7Ca6DLBIB2elWmdNow"&gt;(function(){var src='/images/nav_logo229.png';var iesg=false;document.body.onload = function(){window.n &amp;&amp; window.n();if (document.images){new Image().src=src;}
+if (!iesg){document.f&amp;&amp;document.f.q.focus();document.gbqf&amp;&amp;document.gbqf.q.focus();}
+}
+})();&lt;/script&gt;&lt;div id="mngb"&gt;&lt;div id=gbar&gt;&lt;nobr&gt;&lt;b class=gb1&gt;Búsqueda&lt;/b&gt; &lt;a class=gb1 href="https://www.google.com/imghp?hl=es-419&amp;tab=wi"&gt;Imágenes&lt;/a&gt; &lt;a class=gb1 href="https://maps.google.com.bo/maps?hl=es-419&amp;tab=wl"&gt;Maps&lt;/a&gt; &lt;a class=gb1 href="https://play.google.com/?hl=es-419&amp;tab=w8"&gt;Play&lt;/a&gt; &lt;a class=gb1 href="https://www.youtube.com/?tab=w1"&gt;YouTube&lt;/a&gt; &lt;a class=gb1 href="https://news.google.com/?tab=wn"&gt;Noticias&lt;/a&gt; &lt;a class=gb1 href="https://mail.google.com/mail/?tab=wm"&gt;Gmail&lt;/a&gt; &lt;a class=gb1 href="https://drive.google.com/?tab=wo"&gt;Drive&lt;/a&gt; &lt;a class=gb1 style="text-decoration:none" href="https://www.google.com.bo/intl/es-419/about/products?tab=wh"&gt;&lt;u&gt;Más&lt;/u&gt; &amp;raquo;&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div id=guser width=100%&gt;&lt;nobr&gt;&lt;span id=gbn class=gbi&gt;&lt;/span&gt;&lt;span id=gbf class=gbf&gt;&lt;/span&gt;&lt;span id=gbe&gt;&lt;/span&gt;&lt;a href="http://www.google.com.bo/history/optout?hl=es-419" class=gb4&gt;Historial web&lt;/a&gt; | &lt;a  href="/preferences?hl=es-419" class=gb4&gt;Preferencias&lt;/a&gt; | &lt;a target=_top id=gb_70 href="https://accounts.google.com/ServiceLogin?hl=es-419&amp;passive=true&amp;continue=https://www.google.com/&amp;ec=GAZAAQ" class=gb4&gt;Acceder&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div class=gbh style=left:0&gt;&lt;/div&gt;&lt;div class=gbh style=right:0&gt;&lt;/div&gt;&lt;/div&gt;&lt;center&gt;&lt;br clear="all" id="lgpd"&gt;&lt;div id="lga"&gt;&lt;img alt="Google" height="92" src="/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png" style="padding:28px 0 14px" width="272" id="hplogo"&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;form action="/search" name="f"&gt;&lt;table cellpadding="0" cellspacing="0"&gt;&lt;tr valign="top"&gt;&lt;td width="25%"&gt;&amp;nbsp;&lt;/td&gt;&lt;td align="center" nowrap=""&gt;&lt;input name="ie" value="ISO-8859-1" type="hidden"&gt;&lt;input value="es-419" name="hl" type="hidden"&gt;&lt;input name="source" type="hidden" value="hp"&gt;&lt;input name="biw" type="hidden"&gt;&lt;input name="bih" type="hidden"&gt;&lt;div class="ds" style="height:32px;margin:4px 0"&gt;&lt;input class="lst" style="margin:0;padding:5px 8px 0 6px;vertical-align:top;color:#000" autocomplete="off" value="" title="Buscar con Google" maxlength="2048" name="q" size="57"&gt;&lt;/div&gt;&lt;br style="line-height:0"&gt;&lt;span class="ds"&gt;&lt;span class="lsbb"&gt;&lt;input class="lsb" value="Buscar con Google" name="btnG" type="submit"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="ds"&gt;&lt;span class="lsbb"&gt;&lt;input class="lsb" id="tsuid_1" value="Voy a tener suerte" name="btnI" type="submit"&gt;&lt;script nonce="21RG7Ca6DLBIB2elWmdNow"&gt;(function(){var id='tsuid_1';document.getElementById(id).onclick = function(){if (this.form.q.value){this.checked = 1;if (this.form.iflsig)this.form.iflsig.disabled = false;}
+else top.location='/doodles/';};})();&lt;/script&gt;&lt;input value="AOEireoAAAAAZI-3... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20230618 21:04:24.014" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230618 21:04:23.229" endtime="20230618 21:04:24.014"/>
+</kw>
+<status status="PASS" starttime="20230618 21:04:23.189" endtime="20230618 21:04:24.015"/>
+</test>
+<test id="s1-s1-t2" name="Quick Get Request With Parameters Test" line="9">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>https://www.google.com/search</arg>
+<arg>params=query=ciao</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230618 21:04:24.567" level="INFO">GET Request : url=https://www.google.com/search?query=ciao 
+ path_url=/search?query=ciao 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230618 21:04:24.567" level="INFO">GET Response : url=https://www.google.com/search?query=ciao 
+ status=200, reason=OK 
+ headers={'Content-Type': 'text/html; charset=ISO-8859-1', 'Date': 'Mon, 19 Jun 2023 01:03:44 GMT', 'Expires': '-1', 'Cache-Control': 'private, max-age=0', 'Content-Security-Policy': "object-src 'none';base-uri 'self';script-src 'nonce-OsKgIGdw7MuZSIzCIs-ZDw' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/xsrp", 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Content-Encoding': 'gzip', 'Server': 'gws', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Set-Cookie': '1P_JAR=2023-06-19-01; expires=Wed, 19-Jul-2023 01:03:44 GMT; path=/; domain=.google.com; Secure, AEC=AUEFqZeWia-HWW4GgI4witjjEHek46r_uzDYlmNZ2ZQnwYkLc_Xu4yK8yqk; expires=Sat, 16-Dec-2023 01:03:44 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=511=Iir84lxAqfZom0TVvbywLneVoFAc9ALzBfKN7KaVT9EYVyVuITDAJJU88fsIZyayizs9k5CYq5NgKWdHIUSLJwdRQG5MzWzPN0qlcPrttyGNSsHHjl1M4yFIWqCnBynxmRAWOgkDbY5lgT2fwvSyFXlL3lkBQCFjsUQ7fhzFtng; expires=Tue, 19-Dec-2023 01:03:44 GMT; path=/; domain=.google.com; HttpOnly', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'Transfer-Encoding': 'chunked'} 
+ body=&lt;!doctype html&gt;&lt;html lang="es-419"&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"&gt;&lt;title&gt;ciao - Buscar con Google&lt;/title&gt;&lt;script nonce="OsKgIGdw7MuZSIzCIs-ZDw"&gt;(function(){
+document.documentElement.addEventListener("submit",function(b){var a;if(a=b.target){var c=a.getAttribute("data-submitfalse");a="1"===c||"q"===c&amp;&amp;!a.elements.q.value?!0:!1}else a=!1;a&amp;&amp;(b.preventDefault(),b.stopPropagation())},!0);document.documentElement.addEventListener("click",function(b){var a;a:{for(a=b.target;a&amp;&amp;a!==document.documentElement;a=a.parentElement)if("A"===a.tagName){a="1"===a.getAttribute("data-nohref");break a}a=!1}a&amp;&amp;b.preventDefault()},!0);}).call(this);(function(){var a=window.performance;window.start=Date.now();a:{var b=window;if(a){var c=a.timing;if(c){var d=c.navigationStart,f=c.responseStart;if(f&gt;d&amp;&amp;f&lt;=window.start){window.start=f;b.wsrt=f-d;break a}}a.now&amp;&amp;(b.wsrt=Math.floor(a.now()))}}window.google=window.google||{};var h=function(g){g&amp;&amp;g.target.setAttribute("data-iml",String(Date.now()))};document.documentElement.addEventListener("load",h,!0);google.rglh=function(){document.documentElement.removeEventListener("load",h,!0)};}).call(this);(function(){window._skwEvts=[];})();(function(){window.google.erd={jsr:1,bv:1815,de:true};})();(function(){var sdo=false;var mei=10;
+var h=this||self;var k,l=null!=(k=h.mei)?k:1,n,p=null!=(n=h.sdo)?n:!0,q=0,r,t=google.erd,v=t.jsr;google.ml=function(a,b,d,m,e){e=void 0===e?2:e;b&amp;&amp;(r=a&amp;&amp;a.message);if(google.dl)return google.dl(a,e,d),null;if(0&gt;v){window.console&amp;&amp;console.error(a,d);if(-2===v)throw a;b=!1}else b=!a||!a.message||"Error loading script"===a.message||q&gt;=l&amp;&amp;!m?!1:!0;if(!b)return null;q++;d=d||{};b=encodeURIComponent;var c="/gen_204?atyp=i&amp;ei="+b(google.kEI);google.kEXPI&amp;&amp;(c+="&amp;jexpid="+b(google.kEXPI));c+="&amp;srcpg="+b(google.sn)+"&amp;jsr="+b(t.jsr)+"&amp;bver="+b(t.bv);var f=a.lineNumber;void 0!==f&amp;&amp;(c+="&amp;line="+f);var g=
+a.fileName;g&amp;&amp;(0&lt;g.indexOf("-extension:/")&amp;&amp;(e=3),c+="&amp;script="+b(g),f&amp;&amp;g===window.location.href&amp;&amp;(f=document.documentElement.outerHTML.split("\n")[f],c+="&amp;cad="+b(f?f.substring(0,300):"No script found.")));c+="&amp;jsel="+e;for(var u in d)c+="&amp;",c+=b(u),c+="=",c+=b(d[u]);c=c+"&amp;emsg="+b(a.name+": "+a.message);c=c+"&amp;jsst="+b(a.stack||"N/A");12288&lt;=c.length&amp;&amp;(c=c.substr(0,12288));a=c;m||google.log(0,"",a);return a};window.onerror=function(a,b,d,m,e){r!==a&amp;&amp;(a=e instanceof Error?e:Error(a),void 0===d||"lineNumber"in a||(a.lineNumber=d),void 0===b||"fileName"in a||(a.fileName=b),google.ml(a,!1,void 0,!1,"SyntaxError"===a.name||"SyntaxError"===a.message.substring(0,11)||-1!==a.message.indexOf("Script error")?3:0));r=null;p&amp;&amp;q&gt;=l&amp;&amp;(window.onerror=null)};})();(function(){var c=[],e=0;window.ping=function(b){-1==b.indexOf("&amp;zx")&amp;&amp;(b+="&amp;zx="+Date.now());var a=new Image,d=e++;c[d]=a;a.onerror=a.onload=a.onabort=function(){delete c[d]};a.src=b};}).call(this);&lt;/script&gt;&lt;style&gt;a{color:#1a0dab;text-decoration:none;tap-highlight-color:rgba(0,0,0,.10)}a:visited{color:#4b11a8}a:hover{text-decoration:underline}img{border:0}html{font-family:arial,sans-serif;font-size:14px;line-height:20px;text-size-adjust:100%;color:#3c4043;word-wrap:break-word;background-color:#fff}.bRsWnc{background-color:#fff;border-top:1px solid #dadce0;height:39px;overflow:hidden}.N6RWV{height:51px;overflow-scrolling:touch;overflow-x:auto;overflow-y:hidden}.Uv67qb{box-pack:justify;font-size:12px;line-height:37px;justify-content:space-between;justify-content:space-between}.Uv67qb a,.Uv67qb span{color:#70757a;display:block;flex:none;padding:0 16px;text-align:center;text-transform:uppercase;}span.OXXup{border-bottom:2px solid #4285f4;color:#4285f4;font-weight:bold}a.eZt8xd:visited{color:#70757a}.FElbsf{border-left:1px solid rgba(0,0,0,.12)}header article{overflow:visible}.Pg70bf{height:39px;display:box;display:flex;display:flex;width:100%}.H0PQec{position:relative;flex:1}.sbc{display:flex;width:100%}.Pg70bf input{margin:2px 4px 2px 8px;}.x{width:26px;color:#70757a;font:27px/38px arial, sans-serif;line-height:40px;}#qdClwb{flex:0 0 auto;width:39px;height:39px;border-bottom:0;padding:0;border-top-right-radius:8px;background-color:#1a73e8;border:1px solid #1a73e8;background-image:url(data:image/gif;base64,R0lGODdhJAAjAPIHAODr/nCk+MPZ/FmV96zK+/7+/5K5+kqL9iwAAAAAJAAjAEADani63P4wykmbKcQRXDscQAEMXmmeaLQVLCukzyC09AjfeK7v/MAajACLhPMVAgwjsUcEiZa8xgAYrVqv2Kx2iwsIAAABknfBBAKrTE4IcMyot8ur8datqIbQfJdnAfo2WE6BV05wXIiJigkAOw==);}.sc{font-size:16px;position:absolute;top:39px;left:0;right:0;box-shadow:0 2px 5px rgba(0,0,0,.2);z-index:2;background-color:#fff}.sc&gt;div{padding:10px 10px;padding-left:16px;padding-left:14px;border-top:1px solid #dfe1e5;}.scs{background-color:#fafafa;}.noHIxc{display:block;font-size:16px;padding:0 0 0 8px;flex:1;height:35px;outline:none;border:none;width:100%;-webkit-tap-highlight-color:rgba(0,0,0,0);overflow:hidden;}.sbc input[type=text]{background:none}.bz1lBb{background-color:#fff;border-radius:8px 8px 0 0;box-shadow:0 0 0 1px #dfe1e5;margin-top:24px;}.KP7LCb{border-radius:0 0 8px 8px;box-shadow:0px 1px 0px 1px #dfe1e5;margin-bottom:30px;overflow:hidden}html{background-color:#fff}body{margin:0 auto 0 156px;max-width:652px;min-width:652px;padding:0 8px}.cOl4Id{letter-spacing:-1px;text-align:center;font:22pt Futura, Arial, sans-serif;height:37px;font-smoothing:antialiased;padding:32px 28px 0 24px;position:absolute;left:0;top:0}.cOl4Id span{display:inline-block}.V6gwVd{color:#4285f4}.iWkuvd{color:#ea4335}.cDrQ7{color:#fcc934}.ntlR9{color:#34a853}.tJ3Myc{-webkit-transform:rotate(-20deg);position:relative;left:-1px;display:inline-block}footer{text-align:center;margin-top:18px}footer a,footer a:visited,.smiUbb{color:#70757a}.xeDNfc{margin:0 13px;white-space:nowrap}#EOlPnc{margin-top:36px}#EOlPnc&gt;div{margin:20px}.Srfpq{color:#70757a}&lt;/style&gt;&lt;/head&gt;&lt;body jsmodel="hspDDf"&gt;&lt;header id="hdr"&gt;&lt;script nonce="OsKgIGdw7MuZSIzCIs-ZDw"&gt;(function(){
+var k=this||self,l=function(a){var b=typeof a;return"object"==b&amp;&amp;null!=a||"function"==b},m=function(a,b){function c(){}c.prototype=b.prototype;a.j=b.prototype;a.prototype=new c;a.prototype.constructor=a;a.l=function(d,e,f){for(var g=Array(arguments.length-2),h=2;h&lt;arguments.length;h++)g[h-2]=arguments[h];return b.prototype[e].apply(d,g)}};var n=Array.prototype.indexOf?function(a,b){return Array.prototype.indexOf.call(a,b,void 0)}:function(a,b){if("string"===typeof a)return"string"!==typeof b||1!=b.length?-1:a.indexOf(b,0);for(var c=0;c&lt;a.length;c++)if(c in a&amp;&amp;a[c]===b)return c;return-1};var p=function(a){return"string"==typeof a.className?a.className:a.getAttribute&amp;&amp;a.getAttribute("class")||""},q=function(a,b){"string"==typeof a.className?a.className=b:a.setAttribute&amp;&amp;a.setAttribute("class",b)},r=function(a,b){a.classList?b=a.classList.contains(b):(a=a.classList?a.classList:p(a).match(/\S+/g)||[],b=0&lt;=n(a,b));return b},v=function(){var a=t,b=u;a.classList?a.classList.remove(b):r(a,b)&amp;&amp;q(a,Array.prototype.filter.call(a.classList?a.classList:p(a).match(/\S+/g)||[],function(c){return c!=
+b}).join(" "))};function w(){var a=k.navigator;return a&amp;&amp;(a=a.userAgent)?a:""};var x=function(a){x[" "](a);return a};x[" "]=function(){};var y=-1!=w().indexOf("Gecko")&amp;&amp;!(-1!=w().toLowerCase().indexOf("webkit")&amp;&amp;-1==w().indexOf("Edge"))&amp;&amp;!(-1!=w().indexOf("Trident")||-1!=w().indexOf("MSIE"))&amp;&amp;-1==w().indexOf("Edge");var z=function(a,b){this.type=a;this.target=b};z.prototype.g=function(){};var A=function(){if(!k.addEventListener||!Object.defineProperty)return!1;var a=!1,b=Object.defineProperty({},"passive",{get:function(){a=!0}});try{var c=function(){};k.addEventListener("test",c,b);k.removeEventListener("test",c,b)}catch(d){}return a}();var C=function(a){z.call(this,a?a.type:"");this.relatedTarget=this.target=null;this.button=this.screenY=this.screenX=this.clientY=this.clientX=0;this.key="";this.keyCode=0;this.metaKey=this.shiftKey=this.altKey=this.ctrlKey=!1;this.state=null;this.pointerId=0;this.pointerType="";this.h=null;if(a){var b=this.type=a.type,c=a.changedTouches&amp;&amp;a.changedTouches.length?a.changedTouches[0]:null;this.target=a.target||a.srcElement;var d=a.relatedTarget;if(d){if(y){a:{try{x(d.nodeName);var e=!0;break a}catch(f){}e=
+!1}e||(d=null)}}else"mouseover"==b?d=a.fromElement:"mouseout"==b&amp;&amp;(d=a.toElement);this.relatedTarget=d;c?(this.clientX=void 0!==c.clientX?c.clientX:c.pageX,this.clientY=void 0!==c.clientY?c.clientY:c.pageY,this.screenX=c.screenX||0,this.screenY=c.screenY||0):(this.clientX=void 0!==a.clientX?a.clientX:a.pageX,this.clientY=void 0!==a.clientY?a.clientY:a.pageY,this.screenX=a.screenX||0,this.screenY=a.screenY||0);this.button=a.button;this.keyCode=a.keyCode||0;this.key=a.key||"";this.ctrlKey=a.ctrlKey;this.altKey=a.altKey;this.shiftKey=a.shiftKey;this.metaKey=a.metaKey;this.pointerId=a.pointerId||0;this.pointerType="string"===typeof a.pointerType?a.pointerType:B[a.pointerType]||"";this.state=a.state;this.h=a;a.defaultPrevented&amp;&amp;C.j.g.call(this)}};m(C,z);var B={2:"touch",3:"pen",4:"mouse"};C.prototype.g=function(){C.j.g.call(this);var a=this.h;a.preventDefault?a.preventDefault():a.returnValue=!1};var D="closure_listenable_"+(1E6*Math.random()|0);var E=0;var F=function(a,b,c,d,e){this.listener=a;this.proxy=null;this.src=b;this.type=c;this.capture=!!d;this.h=e;this.key=++E;this.g=this.i=!1},G=function(a){a.g=!0;a.listener=null;a.proxy=null;a.src=null;a.h=null};var H=function(a){this.src=a;this.g={};this.h=0};H.prototype.add=function(a,b,c,d,e){var f=a.toString();a=this.g[f];a||(a=this.g[f]=[],this.h++);var g;a:{for(g=0;g&lt;a.length;++g){var h=a[g];if(!h.g&amp;&amp;h.listener==b&amp;&amp;h.capture==!!d&amp;&amp;h.h==e)break a}g=-1}-1&lt;g?(b=a[g],c||(b.i=!1)):(b=new F(b,this.src,f,!!d,e),b.i=c,a.push(b));return b};var I="closure_lm_"+(1E6*Math.random()|0),J={},K=0,M=function(a,b,c,d,e){if(d&amp;&amp;d.once)return L(a,b,c,d,e);if(Array.isArray(b)){for(var f=0;f&lt;b.length;f++)M(a,b[f],c,d,e);return null}c=N(c);return a&amp;&amp;a[D]?a.g(b,c,l(d)?!!d.capture:!!d,e):O(a,b,c,!1,d,e)},O=function(a,b,c,d,e,f){if(!b)throw Error("a");var g=l(e)?!!e.captur... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20230618 21:04:24.568" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230618 21:04:24.018" endtime="20230618 21:04:24.568"/>
+</kw>
+<status status="PASS" starttime="20230618 21:04:24.017" endtime="20230618 21:04:24.569"/>
+</test>
+<test id="s1-s1-t3" name="Quick Get A JSON Body Test" line="12">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>https://jsonplaceholder.typicode.com/posts/1</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230618 21:04:24.974" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/posts/1 
+ path_url=/posts/1 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230618 21:04:24.974" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/posts/1 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 19 Jun 2023 01:03:45 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1685911581', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'REVALIDATED', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=%2Fnp5KgRRaBheorzgYCLpQ5qBV36gAtsP%2BslZi%2Bl8PDFBZardQ0rk9xe5gMgZYc8KhC5FeJLMjBlx5wMvyTxOG6LtHFu5zim%2FBt5gfrxGeBYq1d%2BGPu75P%2F3YVL8eU%2B%2FZnj6qK9BdPqHCn35CZ74%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7d97daa51c4ce60a-ARI', 'Content-Encoding': 'gzip'} 
+ body={
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+} 
+ </msg>
+<msg timestamp="20230618 21:04:24.975" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230618 21:04:24.571" endtime="20230618 21:04:24.975"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>1</arg>
+<arg>${response.json()}[id]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230618 21:04:25.004" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<status status="PASS" starttime="20230618 21:04:24.977" endtime="20230618 21:04:25.004"/>
+</kw>
+<status status="PASS" starttime="20230618 21:04:24.571" endtime="20230618 21:04:25.006"/>
+</test>
+<status status="PASS" starttime="20230618 21:04:21.351" endtime="20230618 21:04:25.016"/>
+</suite>
+<suite id="s1-s2" name="TC2" source="D:\robotframework-api\TestCases\TC2.robot">
+<test id="s1-s2-t1" name="Login With Admin" line="2">
 <kw name="Given I am on the login page">
 <kw name="Log To Console" library="BuiltIn">
 <arg>I am on the login page</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.942" endtime="20230610 19:11:07.943"/>
+<status status="PASS" starttime="20230618 21:04:25.035" endtime="20230618 21:04:25.036"/>
 </kw>
-<status status="PASS" starttime="20230610 19:11:07.941" endtime="20230610 19:11:07.943"/>
+<status status="PASS" starttime="20230618 21:04:25.034" endtime="20230618 21:04:25.037"/>
 </kw>
 <kw name="When I login with username &quot;admin&quot; and password &quot;admin&quot;" sourcename="I login with username &quot;${username}&quot; and password &quot;${password}&quot;">
 <kw name="Log To Console" library="BuiltIn">
 <arg>I login with username "${username}" and password "${password}"</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.945" endtime="20230610 19:11:07.947"/>
+<status status="PASS" starttime="20230618 21:04:25.044" endtime="20230618 21:04:25.046"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${username}&quot; == &quot;admin&quot; and &quot;${password}&quot; == &quot;admin&quot;">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Login successfully</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.947" endtime="20230610 19:11:07.948"/>
+<status status="PASS" starttime="20230618 21:04:25.047" endtime="20230618 21:04:25.050"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${login_status}</arg>
 <arg>True</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20230610 19:11:07.950" level="INFO">${login_status} = True</msg>
-<status status="PASS" starttime="20230610 19:11:07.948" endtime="20230610 19:11:07.950"/>
+<msg timestamp="20230618 21:04:25.053" level="INFO">${login_status} = True</msg>
+<status status="PASS" starttime="20230618 21:04:25.050" endtime="20230618 21:04:25.054"/>
 </kw>
-<status status="PASS" starttime="20230610 19:11:07.947" endtime="20230610 19:11:07.950"/>
+<status status="PASS" starttime="20230618 21:04:25.046" endtime="20230618 21:04:25.054"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Login failed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230610 19:11:07.951" endtime="20230610 19:11:07.951"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.054" endtime="20230618 21:04:25.054"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${login_status}</arg>
 <arg>False</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="NOT RUN" starttime="20230610 19:11:07.951" endtime="20230610 19:11:07.951"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.058" endtime="20230618 21:04:25.059"/>
 </kw>
-<status status="NOT RUN" starttime="20230610 19:11:07.950" endtime="20230610 19:11:07.952"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.054" endtime="20230618 21:04:25.059"/>
 </branch>
-<status status="PASS" starttime="20230610 19:11:07.947" endtime="20230610 19:11:07.952"/>
+<status status="PASS" starttime="20230618 21:04:25.046" endtime="20230618 21:04:25.059"/>
 </if>
-<status status="PASS" starttime="20230610 19:11:07.944" endtime="20230610 19:11:07.952"/>
+<status status="PASS" starttime="20230618 21:04:25.038" endtime="20230618 21:04:25.060"/>
 </kw>
 <kw name="Then I should see the welcome page">
 <kw name="Log To Console" library="BuiltIn">
 <arg>I should see the welcome page</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.954" endtime="20230610 19:11:07.954"/>
+<status status="PASS" starttime="20230618 21:04:25.081" endtime="20230618 21:04:25.084"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${login_status}&quot; == &quot;True&quot;">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Welcome page is displayed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.955" endtime="20230610 19:11:07.955"/>
+<status status="PASS" starttime="20230618 21:04:25.085" endtime="20230618 21:04:25.088"/>
 </kw>
-<status status="PASS" starttime="20230610 19:11:07.954" endtime="20230610 19:11:07.955"/>
+<status status="PASS" starttime="20230618 21:04:25.084" endtime="20230618 21:04:25.092"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Welcome page is not displayed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230610 19:11:07.955" endtime="20230610 19:11:07.956"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.093" endtime="20230618 21:04:25.094"/>
 </kw>
 <kw name="Fail" library="BuiltIn">
 <arg>Welcome page is not displayed</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20230610 19:11:07.956" endtime="20230610 19:11:07.956"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.095" endtime="20230618 21:04:25.095"/>
 </kw>
-<status status="NOT RUN" starttime="20230610 19:11:07.955" endtime="20230610 19:11:07.956"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.092" endtime="20230618 21:04:25.095"/>
 </branch>
-<status status="PASS" starttime="20230610 19:11:07.954" endtime="20230610 19:11:07.956"/>
+<status status="PASS" starttime="20230618 21:04:25.084" endtime="20230618 21:04:25.095"/>
 </if>
-<status status="PASS" starttime="20230610 19:11:07.953" endtime="20230610 19:11:07.956"/>
+<status status="PASS" starttime="20230618 21:04:25.069" endtime="20230618 21:04:25.096"/>
 </kw>
 <doc>This test case is to test login with BDD syntax</doc>
-<status status="PASS" starttime="20230610 19:11:07.940" endtime="20230610 19:11:07.957"/>
+<status status="PASS" starttime="20230618 21:04:25.033" endtime="20230618 21:04:25.097"/>
 </test>
-<test id="s1-t2" name="Login With Invalid User" line="8">
+<test id="s1-s2-t2" name="Login With Invalid User" line="8">
 <kw name="Given I am on the login page">
 <kw name="Log To Console" library="BuiltIn">
 <arg>I am on the login page</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.962" endtime="20230610 19:11:07.963"/>
+<status status="PASS" starttime="20230618 21:04:25.107" endtime="20230618 21:04:25.110"/>
 </kw>
-<status status="PASS" starttime="20230610 19:11:07.962" endtime="20230610 19:11:07.964"/>
+<status status="PASS" starttime="20230618 21:04:25.104" endtime="20230618 21:04:25.110"/>
 </kw>
 <kw name="When I login with username &quot;invalid&quot; and password &quot;invalid&quot;" sourcename="I login with username &quot;${username}&quot; and password &quot;${password}&quot;">
 <kw name="Log To Console" library="BuiltIn">
 <arg>I login with username "${username}" and password "${password}"</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.965" endtime="20230610 19:11:07.966"/>
+<status status="PASS" starttime="20230618 21:04:25.116" endtime="20230618 21:04:25.135"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${username}&quot; == &quot;admin&quot; and &quot;${password}&quot; == &quot;admin&quot;">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Login successfully</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230610 19:11:07.966" endtime="20230610 19:11:07.967"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.137" endtime="20230618 21:04:25.137"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${login_status}</arg>
 <arg>True</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="NOT RUN" starttime="20230610 19:11:07.967" endtime="20230610 19:11:07.967"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.138" endtime="20230618 21:04:25.140"/>
 </kw>
-<status status="NOT RUN" starttime="20230610 19:11:07.966" endtime="20230610 19:11:07.967"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.136" endtime="20230618 21:04:25.142"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Login failed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.968" endtime="20230610 19:11:07.968"/>
+<status status="PASS" starttime="20230618 21:04:25.142" endtime="20230618 21:04:25.144"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${login_status}</arg>
 <arg>False</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20230610 19:11:07.970" level="INFO">${login_status} = False</msg>
-<status status="PASS" starttime="20230610 19:11:07.969" endtime="20230610 19:11:07.970"/>
+<msg timestamp="20230618 21:04:25.150" level="INFO">${login_status} = False</msg>
+<status status="PASS" starttime="20230618 21:04:25.145" endtime="20230618 21:04:25.151"/>
 </kw>
-<status status="PASS" starttime="20230610 19:11:07.967" endtime="20230610 19:11:07.971"/>
+<status status="PASS" starttime="20230618 21:04:25.142" endtime="20230618 21:04:25.151"/>
 </branch>
-<status status="PASS" starttime="20230610 19:11:07.966" endtime="20230610 19:11:07.971"/>
+<status status="PASS" starttime="20230618 21:04:25.136" endtime="20230618 21:04:25.151"/>
 </if>
-<status status="PASS" starttime="20230610 19:11:07.964" endtime="20230610 19:11:07.971"/>
+<status status="PASS" starttime="20230618 21:04:25.112" endtime="20230618 21:04:25.152"/>
 </kw>
 <kw name="Then I should see the error message">
 <kw name="Log To Console" library="BuiltIn">
 <arg>I should see the error message</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.972" endtime="20230610 19:11:07.973"/>
+<status status="PASS" starttime="20230618 21:04:25.153" endtime="20230618 21:04:25.154"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${login_status}&quot; == &quot;False&quot;">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Error message is displayed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.975" endtime="20230610 19:11:07.978"/>
+<status status="PASS" starttime="20230618 21:04:25.169" endtime="20230618 21:04:25.177"/>
 </kw>
-<status status="PASS" starttime="20230610 19:11:07.974" endtime="20230610 19:11:07.978"/>
+<status status="PASS" starttime="20230618 21:04:25.168" endtime="20230618 21:04:25.177"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Error message is not displayed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230610 19:11:07.978" endtime="20230610 19:11:07.979"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.178" endtime="20230618 21:04:25.178"/>
 </kw>
 <kw name="Fail" library="BuiltIn">
 <arg>Error message is not displayed</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20230610 19:11:07.979" endtime="20230610 19:11:07.979"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.179" endtime="20230618 21:04:25.180"/>
 </kw>
-<status status="NOT RUN" starttime="20230610 19:11:07.978" endtime="20230610 19:11:07.979"/>
+<status status="NOT RUN" starttime="20230618 21:04:25.177" endtime="20230618 21:04:25.180"/>
 </branch>
-<status status="PASS" starttime="20230610 19:11:07.973" endtime="20230610 19:11:07.979"/>
+<status status="PASS" starttime="20230618 21:04:25.168" endtime="20230618 21:04:25.180"/>
 </if>
-<status status="PASS" starttime="20230610 19:11:07.972" endtime="20230610 19:11:07.980"/>
+<status status="PASS" starttime="20230618 21:04:25.153" endtime="20230618 21:04:25.181"/>
 </kw>
 <kw name="And I should be able to login again">
 <kw name="Log To Console" library="BuiltIn">
 <arg>I should be able to login again</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.981" endtime="20230610 19:11:07.982"/>
+<status status="PASS" starttime="20230618 21:04:25.183" endtime="20230618 21:04:25.184"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>The Login page is displayed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230610 19:11:07.982" endtime="20230610 19:11:07.983"/>
+<status status="PASS" starttime="20230618 21:04:25.185" endtime="20230618 21:04:25.186"/>
 </kw>
-<status status="PASS" starttime="20230610 19:11:07.980" endtime="20230610 19:11:07.983"/>
+<status status="PASS" starttime="20230618 21:04:25.182" endtime="20230618 21:04:25.186"/>
 </kw>
 <doc>This test case is to test login with BDD syntax</doc>
-<status status="PASS" starttime="20230610 19:11:07.961" endtime="20230610 19:11:07.984"/>
+<status status="PASS" starttime="20230618 21:04:25.102" endtime="20230618 21:04:25.189"/>
 </test>
-<status status="PASS" starttime="20230610 19:11:07.905" endtime="20230610 19:11:07.987"/>
+<status status="PASS" starttime="20230618 21:04:25.021" endtime="20230618 21:04:25.198"/>
+</suite>
+<status status="PASS" starttime="20230618 21:04:21.286" endtime="20230618 21:04:25.204"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="TC2">TC2</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="TC1 GET Request &amp; TC2">TC1 GET Request &amp; TC2</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="TC1 GET Request">TC1 GET Request &amp; TC2.TC1 GET Request</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="TC2">TC1 GET Request &amp; TC2.TC2</stat>
 </suite>
 </statistics>
 <errors>
